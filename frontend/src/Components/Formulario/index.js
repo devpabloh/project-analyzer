@@ -23,9 +23,9 @@ const Formulario = ({emAddProjetos})=>{
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        emAddProjetos(projetos)
+        const novoProjeto = {...projetos, id: Date.now()}
+        emAddProjetos(novoProjeto)
         setProjetos({
-            id: Date.now(),
             nome: "",
             status: "",
             dataDeInicio: "",
