@@ -1,6 +1,8 @@
+import styles from "./Tabela.module.css"
+
 const Tabela = ({projetos, aoRemoverProjeto})=> {
     return(
-        <table>
+        <table className={styles.containerTabela}>
             <thead>
                 <tr>
                     <th>Nome</th>

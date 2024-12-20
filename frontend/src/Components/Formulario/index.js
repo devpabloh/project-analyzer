@@ -1,3 +1,8 @@
+/* Importando CSS */
+import styles from "./Formulario.module.css"
+
+
+/* Importando os hooks */
 import {useState} from "react";
 
 const Formulario = ({emAddProjetos})=>{
@@ -31,7 +36,7 @@ const Formulario = ({emAddProjetos})=>{
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form className={styles.containerFormulario} onSubmit={handleSubmit}>
             <input 
                 type="text"
                 nome="name"
