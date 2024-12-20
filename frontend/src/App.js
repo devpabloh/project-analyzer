@@ -1,26 +1,32 @@
+import { useState } from "react";
+import Formulario from "./Components/Formulario";
+import Tabela from "./Components/Tabela"
+import './App.css'
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
-import { useState } from 'react';
-import './App.css';
-import Formulario from './Components/Formulario';
-import Tabela from './Components/Tabela';
 
-function App() {
-  const [projetos, setProjetos] = useState([]) // Recebendo os projetos e lidando com suas atualizações de estado.
-  const AdicionarProjeto = ()=>{
-    setProjetos((prevProjetos)=>[...prevProjetos, projetos])
-  }
+const App = () => {
+  const [projetos, setProjetos] = useState([]);
 
-  const RemoverProjeto = (id)=>{
-    setProjetos((prevProjetos)=> prevProjetos.filter((proj)=> proj.id !== id))
-  }
+  const emAddProjetos = (novoProjeto) => {
+    setProjetos((prevProjetos) => [...prevProjetos, novoProjeto]);
+  };
 
   return (
     <div className="App">
-      <h1>Análise de projetos</h1>
-      <Formulario aoAdicionarProjeto={AdicionarProjeto}/>
-      <Tabela projetos={projetos} aoRemoverProjeto={RemoverProjeto}/>
+      <Header/>
+      <main className="containerMain">
+        <h1>Gestão de Projetos</h1>
+        {/* Renderizando o Formulário */}
+        <Formulario emAddProjetos={emAddProjetos} />
+        {/* Renderizando a Tabela */}
+        <Tabela projetos={projetos} />
+      </main>
+      <Footer/>
     </div>
   );
-}
+};
 
 export default App;
+

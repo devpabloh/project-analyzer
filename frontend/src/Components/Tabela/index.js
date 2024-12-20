@@ -1,37 +1,38 @@
-import styles from "./Tabela.module.css"
+import styles from "./Tabela.module.css";
 
-const Tabela = ({projetos, aoRemoverProjeto})=> {
-    return(
-        <table className={styles.containerTabela}>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Status</th>
-                    <th>Data de inicio</th>
-                    <th>Data de fim</th>
-                    <th>Riscos</th>
-                    <th>Ambiente</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                {projetos.map((projeto)=> (
-                    <tr key={projeto.id}>
-                        <td>{projeto.nome}</td>
-                        <td>{projeto.status}</td>
-                        <td>{projeto.dataDeInicio}</td>
-                        <td>{projeto.dataDeFim || "N/A"}</td>
-                        <td>{projeto.riscos || "Nenhum"} </td>
-                        <td>{projeto.ambiente}</td>
-                        <td>
-                            <button onClick={()=> aoRemoverProjeto(projeto.id)}>Remover</button>
-                        </td>
+const Tabela = ({ projetos }) => {
+  return (
+    <table className={styles.containerTabela}>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Status</th>
+          <th>Data de Início</th>
+          <th>Data de Fim</th>
+          <th>Riscos</th>
+          <th>Ambiente</th>
+        </tr>
+      </thead>
+      <tbody>
+        {projetos.length > 0 ? (
+          projetos.map((projeto) => (
+            <tr key={projeto.id}>
+              <td>{projeto.nome}</td>
+              <td>{projeto.status}</td>
+              <td>{projeto.dataDeInicio}</td>
+              <td>{projeto.dataDeFim}</td>
+              <td>{projeto.riscos}</td>
+              <td>{projeto.ambiente}</td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colSpan="6">Nenhum projeto adicionado ainda.</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  );
+};
 
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    )
-}
-
-export default Tabela
+export default Tabela;

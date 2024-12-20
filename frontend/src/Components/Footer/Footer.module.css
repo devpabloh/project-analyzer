@@ -1,0 +1,14 @@
+.containerFooter{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 150px;
+    padding: 10px 0;
+}
+
+.containerFooter img{
+    height: 100px;
+    margin-right: 20px;
+}

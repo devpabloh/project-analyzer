@@ -1,0 +1,11 @@
+.containerHeader{
+    background-color: #FFFFFF;
+    width: 100%;
+    box-shadow: 4px solid black;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.containerHeader img{
+    height: 100px;
+}

@@ -1,6 +1,19 @@
 .containerFormulario{
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
 
+.containerCampo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+.containerCampo input, .containerCampo select{
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 30px;
 }
